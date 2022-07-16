@@ -11,6 +11,10 @@
 }
 .incorrectly-typed{
     color: red;
+    background-color: lightgrey;
+}
+.skipped{
+    color: black;
     background-color: darkgrey;
 }
 .typing-cursor{

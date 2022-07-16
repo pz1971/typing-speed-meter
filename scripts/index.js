@@ -50,7 +50,7 @@ const typing = (e) => {
         while(pos < pos2){
             // change class to incorrectly-typed
             if(charList[pos] != ' ')
-                document.getElementById('ch-' + pos).className = 'incorrectly-typed'
+                document.getElementById('ch-' + pos).className = 'skipped'
             pos++
         }
     }
