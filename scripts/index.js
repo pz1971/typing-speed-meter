@@ -63,7 +63,7 @@ const checkIfBackspace = (e) => {
         if(pos == 0 || pos == charList.length || charList[pos - 1] == ' ')
             return
         // change class to untyped
-        document.getElementById('ch-' + pos).className = 'untyped'
         pos--
+        document.getElementById('ch-' + pos).className = 'untyped'
     }
 }
