@@ -13,3 +13,6 @@
     color: red;
     background-color: darkgrey;
 }
+.typing-cursor{
+    text-decoration: underline;
+}

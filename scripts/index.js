@@ -16,6 +16,10 @@ initialize = ()=>{
         // initially all characters are untyped
         span.className = 'untyped'
         span.id = 'ch-' + i
+        
+        if(i == 0)
+            span.className += ' typing-cursor'
+
         // append this span to textContainer
         textContainer.appendChild(span)
     }
@@ -41,9 +45,12 @@ const typing = (e) => {
         // whitespace completes a word
         // move pos to the begin of the next word
         var pos2 = charList.indexOf(' ', pos) + 1
+        if(pos2 == 0)
+            pos2 = charList.length
         while(pos < pos2){
             // change class to incorrectly-typed
-            document.getElementById('ch-' + pos).className = 'incorrectly-typed'
+            if(charList[pos] != ' ')
+                document.getElementById('ch-' + pos).className = 'incorrectly-typed'
             pos++
         }
     }
@@ -52,6 +59,9 @@ const typing = (e) => {
         document.getElementById('ch-' + pos).className = 'incorrectly-typed'
         pos++
     }
+
+    // change class to typing-cursor
+    document.getElementById('ch-' + pos).className += ' typing-cursor'
 }
 
 const checkIfBackspace = (e) => {
@@ -63,7 +73,8 @@ const checkIfBackspace = (e) => {
         if(pos == 0 || pos == charList.length || charList[pos - 1] == ' ')
             return
         // change class to untyped
-        pos--
         document.getElementById('ch-' + pos).className = 'untyped'
+        pos--
+        document.getElementById('ch-' + pos).className = 'untyped typing-cursor'
     }
 }
