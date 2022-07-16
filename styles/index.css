@@ -1,0 +1,15 @@
+.text-container{
+    font-size: 30pt;
+}
+.untyped{
+    color: black;
+    background-color: white;
+}
+.correctly-typed{
+    color: green;
+    background-color: white;
+}
+.incorrectly-typed{
+    color: red;
+    background-color: darkgrey;
+}

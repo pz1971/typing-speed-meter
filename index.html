@@ -9,7 +9,7 @@
     <script src="scripts/index.js" defer></script>
     <script src="Data/texts.js" defer></script>
 </head>
-<body onload="initialize()" onkeypress="typing(event)">
+<body onload="initialize()" onkeypress="typing(event)" onkeydown="checkIfBackspace(event)">
     <div class="text-container" id="text-container"></div>
 </body>
 </html>
