@@ -1,13 +1,33 @@
+// textId is the id of the text in texts array
+var textId
 // a text object
 var text
 // text splitting into characters will be stored in charList
 var charList 
 // flags if the ith character has not ever typed wrong
 var isCorrect
+// currently typing position
+var pos = 0
+// flag if scores has already been calculated
+var scoresCalculated = false
+// timer variable
+var timer = null
+// start time
+var startTime = null
+// elapse time
+var timeElapsed = 0.0
 
-initialize = ()=>{
-    text = texts[0]
+const initialize = () => {
+    // generate a random number between 0 and length of texts array
+    textId = Math.floor(Math.random() * texts.length)
+    initialize2()
+}
+
+const initialize2 = ()=>{
+    text = texts[textId]
     const textContainer = document.getElementById('text-container')
+    // clear text container
+    textContainer.innerHTML = ''
 
     // split into list of single characters
     charList = text.text.split('')
@@ -27,19 +47,21 @@ initialize = ()=>{
         textContainer.appendChild(span)
     }
 
+    // initialize all the variables and flags
     isCorrect = new Array(charList.length).fill(true)
-}
+    pos = 0
+    scoresCalculated = false
+    startTime = null
+    timeElapsed = 0.0
+    if(timer != null)
+        clearInterval(timer)
+    timer = null
 
-// currently typing position
-var pos = 0
-// flag if scores has already been calculated
-var scoresCalculated = false
-// timer variable
-var timer = null
-// start time
-var startTime = null
-// elapse time
-var timeElapsed = 0.0
+    // make time, accuracy, and wpm elements invisible
+    document.getElementById('time').style.display = 'none'
+    document.getElementById('accuracy').style.display = 'none'
+    document.getElementById('wpm').style.display = 'none'
+}
 
 const typing = (e) => {
     e = e || window.event
@@ -58,6 +80,8 @@ const typing = (e) => {
             timeElapsed = (new Date() - startTime) / 1000
             document.getElementById('time').innerHTML = "Time : " + timeElapsed.toFixed(3)
         }, 1)
+        // make time visible
+        document.getElementById('time').style.display = 'block'
     }
     
     if(key == charList[pos]){
@@ -93,6 +117,9 @@ const typing = (e) => {
         clearInterval(timer)
         calculateScores()
         scoresCalculated = true
+        // make accuracy, wpm, and visible
+        document.getElementById('accuracy').style.display = 'block'
+        document.getElementById('wpm').style.display = 'block'
     }
     else{
         // if pos is at the end of the text, move cursor to the next word
@@ -143,6 +170,18 @@ const calculateScores = () => {
         return false
     }).length
 
-    const netWPM = grossWPM - uncorrectedErrors / (timeElapsed / 60)
+    var netWPM = grossWPM - uncorrectedErrors / (timeElapsed / 60)
+    // minimum wpm is 0
+    netWPM = netWPM < 0 ? 0 : netWPM
     document.getElementById('wpm').innerHTML = "WPM : " + netWPM.toFixed(0)
+}
+
+const repeat = () => {
+    console.log('repeat')
+    initialize2()
+}
+
+const next = () => {
+    console.log('next')
+    initialize()
 }
