@@ -10,6 +10,15 @@
     <script src="Data/texts.js" defer></script>
 </head>
 <body onload="initialize()" onkeypress="typing(event)" onkeydown="checkIfBackspace(event)">
+    <!-- header starts -->
+    <header>
+        <!-- isert image -->
+        <!-- image collected from https://www.flaticon.com/free-icons/ -->
+        <img src="static/logo.png" height="50ch" width="50ch">
+        <h1>Typing Speed Meter</h1>
+    </header>
+    <!-- header ends -->
+    
     <div class="text-container" id="text-container"></div>
     <div class="buttons-container">
         <div class="btn repeat-button" id="repeat-button" onclick="repeat()"><strong>↻</strong></div>
@@ -20,5 +29,7 @@
         <div class="accuracy" id="accuracy">Accuracy : 100.00%</div>
         <div class="wpm" id="wpm">WPM : 100</div>
     </div>
+    <!-- footer starts -->
+    <!-- footer ends -->
 </body>
 </html>
