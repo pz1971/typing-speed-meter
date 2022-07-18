@@ -11,8 +11,14 @@
 </head>
 <body onload="initialize()" onkeypress="typing(event)" onkeydown="checkIfBackspace(event)">
     <div class="text-container" id="text-container"></div>
-    <div class="time" id="time"></div>
-    <div class="accuracy" id="accuracy"></div>
-    <div class="wpm" id="wpm"></div>
+    <div class="buttons-container">
+        <div class="repeat-button" id="repeat-button" onclick="repeat()"><strong>↻</strong></div>
+        <div class="next-button" id="next-button" onclick="next()"><strong>⇨</strong></div>
+    </div>
+    <div class="scores-container">
+        <div class="time" id="time">Time : 31.566</div>
+        <div class="accuracy" id="accuracy">Accuracy : 100.00%</div>
+        <div class="wpm" id="wpm">WPM : 100</div>
+    </div>
 </body>
 </html>

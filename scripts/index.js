@@ -56,7 +56,7 @@ const typing = (e) => {
         timer = setInterval(() => {
             // calculate time elapsed since start upto three decimal places
             timeElapsed = (new Date() - startTime) / 1000
-            document.getElementById('time').innerHTML = timeElapsed.toFixed(3)
+            document.getElementById('time').innerHTML = "Time : " + timeElapsed.toFixed(3)
         }, 1)
     }
     
@@ -118,7 +118,7 @@ const checkIfBackspace = (e) => {
 const calculateScores = () => {
     // accyracy = number of correctly typed characters / number of characters * 100
     const accuracy = charList.filter((c, i) => {isCorrect[i] && c != ' '}).length / charList.length * 100
-    document.getElementById('accuracy').innerHTML = accuracy.toFixed(2) + '%'
+    document.getElementById('accuracy').innerHTML = "Accuracy : " + accuracy.toFixed(2) + '%'
 
     // ref = https://www.speedtypingonline.com/typing-equations
     // grossWPM = (number of typed characters / 5) / time elapsed * 60
@@ -144,5 +144,5 @@ const calculateScores = () => {
     }).length
 
     const netWPM = grossWPM - uncorrectedErrors / (timeElapsed / 60)
-    document.getElementById('wpm').innerHTML = netWPM
+    document.getElementById('wpm').innerHTML = "WPM : " + netWPM.toFixed(0)
 }

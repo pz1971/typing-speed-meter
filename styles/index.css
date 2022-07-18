@@ -1,5 +1,11 @@
 .text-container{
     font-size: 30pt;
+    text-align: center;
+    border: 2px solid black;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    padding: 1ch;
 }
 .untyped{
     color: black;
@@ -19,4 +25,21 @@
 }
 .typing-cursor{
     text-decoration: underline;
+}
+.scores-container{
+    font-size: 16pt;
+    text-align: center;
+    padding-top: 1ch;
+}
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: xx-large;;
+}
+.repeat-button{
+    padding: 1ch;
+}
+.next-button{
+    padding: 1ch;
 }
