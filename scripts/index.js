@@ -144,7 +144,16 @@ const checkIfBackspace = (e) => {
 
 const calculateScores = () => {
     // accyracy = number of correctly typed characters / number of characters * 100
-    const accuracy = charList.filter((c, i) => {isCorrect[i] && c != ' '}).length / charList.length * 100
+    var correctCount = 0
+    for(let i = 0; i < isCorrect.length; i++)
+        if(isCorrect[i] && charList[i] != ' ')
+            correctCount++
+    var spaceCount = 0
+    for(let i = 0; i < charList.length; i++)
+        if(charList[i] == ' ')
+            spaceCount++
+    const accuracy = correctCount / (charList.length - spaceCount) * 100
+
     document.getElementById('accuracy').innerHTML = "Accuracy : " + accuracy.toFixed(2) + '%'
 
     // ref = https://www.speedtypingonline.com/typing-equations
