@@ -1,3 +1,6 @@
+body{
+    font-family: lato;
+}
 header{
     display: flex;
     padding-left: 10ch;
@@ -8,7 +11,7 @@ header h1{
     margin-left: 1ch;
 }
 .text-container{
-    font-size: 25pt;
+    font-size: 20pt;
     text-align: center;
     border: 2px solid black;
     margin-left: 10%;
@@ -54,5 +57,33 @@ header h1{
     padding: 1ch;
 }
 .next-button{
+    padding: 1ch;
+}
+
+hr{
+    border: 1px solid rgb(0, 0, 0);
+    margin-bottom: -2ch;
+}
+.footer-text{
+    font-size: 14pt;
+    text-align: center;
+    padding-top: 1ch;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.footer-container{
+    /* display: flex; */
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    padding: 1ch;
+}
+.social-media-icons-container{
+    padding-top: 0.5ch;
+}
+.social-media-icons{
     padding: 1ch;
 }
