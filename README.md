@@ -7,6 +7,6 @@
 It was built with only HTML, CSS, and JavaScript.
 
 ### TODOs:
-[] Display Author's Name<br>
-[] Do not Complete word until space button hits.
+[] Display Author's Name.<br>
+[] Do not Complete word until space button hits.<br>
 [] Night Mode
