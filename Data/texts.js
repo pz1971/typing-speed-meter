@@ -29,7 +29,7 @@ const texts = [
         author: "Mae West"
     },
     {
-        text: "Don’t walk in front of me... I may not follow Don’t walk behind me... I may not lead Walk beside me... just be my friend",
+        text: "Don't walk in front of me... I may not follow Don't walk behind me... I may not lead Walk beside me... just be my friend",
         author: "Albert Camus"
     },
     {
